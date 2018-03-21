@@ -1,0 +1,20 @@
+[Unit]
+Description=PumaService
+Requires=mongod.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/appuser/reddit
+
+User=appuser
+Group=appuser
+
+# Environment=RACK_ENV=production
+
+OOMScoreAdjust=-1000
+
+ExecStart=/usr/bin/bundle exec puma
+
+[Install]
+WantedBy=multi-user.target
+
