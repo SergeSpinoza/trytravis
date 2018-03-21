@@ -21,7 +21,6 @@ ForwardAgent yes
 ProxyCommand ssh spinoza@35.205.75.117 nc %h %p
 ```
 
-
 ## Данные для подключения
 
 bastion_IP = 35.205.75.117
@@ -94,5 +93,4 @@ create-reddit-vm.sh
 ``` 
 
 Проверить работу приложения можно по адресу: http://35.195.9.46:9292
-
 
