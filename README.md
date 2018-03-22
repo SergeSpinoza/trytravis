@@ -28,6 +28,7 @@ someinternalhost_IP = 10.132.0.3
 
 
 # HomeWork-5
+
 ## Основное задание
 Добавлены скрипты для развертывания
 install_ruby.sh
@@ -59,6 +60,7 @@ gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --targ
 ```
 
 # HomeWork-6
+
 ## Основное задание
 Добавлена директория packer и скрипты для создания параметризированного шаблона reddit-base: 
 ubuntu16.json - packer шаблон
