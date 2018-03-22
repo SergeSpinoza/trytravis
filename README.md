@@ -29,6 +29,7 @@ someinternalhost_IP = 10.132.0.3
 
 
 # HomeWork-5
+
 ## Основное задание
 Добавлены скрипты для развертывания
 install_ruby.sh
