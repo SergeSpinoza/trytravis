@@ -1,13 +1,15 @@
 {
   "variables": {
-    "machine_type": "f1-micro"
+    "machine_type": "f1-micro",
+    "project_id": null,
+    "image_family": null
   },
 
   "builders": [
     {
     "type": "googlecompute",
     "project_id": "{{user `project_id`}}",
-    "image_name": "reddit-base-{{timestamp}}",
+    "image_name": "{{user `image_family`}}-{{timestamp}}",
     "image_family": "{{user `image_family`}}",
     "source_image_family": "ubuntu-1604-lts",
     "zone": "europe-west1-b",
