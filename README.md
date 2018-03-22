@@ -21,7 +21,6 @@ ForwardAgent yes
 ProxyCommand ssh spinoza@35.205.75.117 nc %h %p
 ```
 
-
 ## Данные для подключения
 
 bastion_IP = 35.205.75.117
@@ -59,4 +58,41 @@ gcloud compute instances create reddit-app\
 ```
 gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --target-tags puma-server
 ```
+
+# HomeWork-6
+
+## Основное задание
+Добавлена директория packer и скрипты для создания параметризированного шаблона reddit-base: 
+ubuntu16.json - packer шаблон
+scripts/install_mongodb.sh
+scripts/install_ruby.sh
+variables.json.example - пример файла с параметрами
+
+Для запуска создания шаблона VM необходимо из директории packer выполнить команду:
+```
+packer build -var-file=variables.json ubuntu16.json
+```
+
+В файл .gitignore добавлен файл с реальными параметрами для packer - variables.json
+ 
+В шаблон packer добавлены следующие опции: Описание образа, Размер и тип диска, Название сети, Теги
+
+## Дополнительное задание с * 
+Добавлен packer-шаблон для создания bake-образа VM со всеми зависимостями приложения и самим кодом приложения. 
+Добавлен скрипт для создания и запуска (в том числе и автозагрузки) puma с использованием systemd unit. 
+
+Для запуска создания шаблона VM необходимо из директории packer выполнить команду:
+```
+packer build immutable.json
+```
+
+## Дополнительное задание с двумя ** 
+Создан скрипт создания VM через утилиту gcloud с использованием ранее созданного packer'ом шаблона vm.
+
+Для запуска необходимо запустить скрипт, который находится в директории config-scripts: 
+```
+create-reddit-vm.sh
+``` 
+
+Проверить работу приложения можно по адресу: http://35.195.9.46:9292
 
