@@ -23,3 +23,4 @@ variable zone {
   description = "Zone"
   default     = "europe-west1-b"
 }
+
