@@ -10,6 +10,7 @@ module "app" {
   zone               = "${var.zone}"
   app_disk_image     = "${var.app_disk_image}"
   access_to_app_from = ["0.0.0.0/0"]
+  private_key_path   = "${var.private_key_path}"
   need_deploy        = "false"
 }
 
