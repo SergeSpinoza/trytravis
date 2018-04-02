@@ -43,7 +43,3 @@ variable need_deploy {
   description = "Deploy application"
   default     = "false"
 }
-
-variable mongo_ip {
-  description = "Mongo DB IP"
-}
