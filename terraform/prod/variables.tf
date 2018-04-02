@@ -46,5 +46,4 @@ variable need_deploy {
 
 variable mongo_ip {
   description = "Mongo DB IP"
-  default     = ""
 }

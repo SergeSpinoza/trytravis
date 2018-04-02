@@ -12,6 +12,7 @@ module "app" {
   access_to_app_from = ["0.0.0.0/0"]
   private_key_path   = "${var.private_key_path}"
   need_deploy        = "false"
+  mongo_ip           = "${module.db.db_int_ip}"
 }
 
 module "db" {
