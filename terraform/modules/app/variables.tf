@@ -33,3 +33,7 @@ variable access_to_app_from {
 variable need_deploy {
   description = "Deploy application"
 }
+
+variable mongo_ip {
+  description = "Mongo DB IP"
+}
