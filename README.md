@@ -153,3 +153,6 @@ terraform apply
  - Различия выполнения команды `ansible-playbook clone.yml` до и после команды `ansible app -m command -a 'rm -rf ~/reddit'` в следующем:
  -- В первом случае изменений нет, о чем свидетельствует строка `appserver                  : ok=2    changed=0    unreachable=0    failed=0`
  -- Во втором случае - изменения есть (выполнено клонирование репо в указанный каталог, т.к. предварительно было удалено содержимое каталога), о чем свидетельствует строка `appserver                  : ok=2    changed=1    unreachable=0    failed=0`
+
+## Дополнительное задание со *
+ - Добавлен скрипт на python, который читает inventory.json (в формате json). Для проверки необходимо выполнить команду `ansible all -i inventory.py -m ping`
