@@ -1,0 +1,32 @@
+{
+  "variables": {
+    "machine_type": "f1-micro",
+    "project_id": "infra-197907",
+    "image_family": "reddit-app-base"
+  },
+
+  "builders": [
+    {
+    "type": "googlecompute",
+    "project_id": "{{user `project_id`}}",
+    "image_name": "{{user `image_family`}}-{{timestamp}}",
+    "image_family": "{{user `image_family`}}",
+    "source_image_family": "ubuntu-1604-lts",
+    "zone": "europe-west1-b",
+    "ssh_username": "appuser",
+    "machine_type": "{{user `machine_type`}}",
+    "image_description": "Image description there",
+    "disk_size": "10",
+    "disk_type": "pd-standard",
+    "network": "default"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/install_ruby.sh",
+      "execute_command": "sudo {{.Path}}"
+    }
+  ]
+}
+
