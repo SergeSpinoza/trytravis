@@ -10,6 +10,11 @@ module "storage-bucket" {
   name    = ["spinoza-storage-bucket-1", "spinoza-storage-bucket-2"]
 }
 
+# module "vcp" {
+#  source        = "modules/vpc"
+#  source_ranges = ["0.0.0.0/0"]
+# }
+
 output storage-bucket_url {
   value = "${module.storage-bucket.url}"
 }

@@ -156,3 +156,21 @@ terraform apply
 
 ## Дополнительное задание со *
  - Добавлен скрипт на python, который читает inventory.json (в формате json). Для проверки необходимо выполнить команду `ansible all -i inventory.py -m ping`
+
+
+# Homework-10
+
+## Основное задание
+- Опробованы следующие схемы работы с ansible:
+-- Один плейбук - один сценарий;
+-- Один плейбук - много сценариев;
+-- Много плейбуков;
+- Пересозданы образы packer'ом с использованием плейбуков ansible с помощью команд `packer build -var-file=packer/variables.json packer/app.json` и `packer build -var-file=packer/variables.json packer/db.json`;
+- Запущено stage окружение на основе созданных образов;
+- Запущен плейбук ansible site.yml с использованием Dynamic Inventory;
+- Проверена работа приложения;
+
+
+## Дополнительное задание со *
+- Dynamic Inventory реализован через чтение файла terraform.tfstate c помощью скриптов yatadis.py (источник https://github.com/wtsi-hgi/yatadis) и скрипта dynamic_inventory.sh (который создает необходимые группы).
+- Использование скрипта dynamic_inventory.sh добавлено в ansible.cfg
