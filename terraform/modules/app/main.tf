@@ -39,11 +39,6 @@ resource "null_resource" "app" {
     destination = "/tmp/puma.service"
   }
 
-  #  provisioner "file" {
-  #    source      = "${path.module}/files/puma.service"
-  #    destination = "/tmp/puma.service"
-  #  }
-
   provisioner "remote-exec" {
     script = "${path.module}/files/deploy.sh"
   }
