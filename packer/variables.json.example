@@ -1,5 +1,7 @@
 {
   "project_id": "change-this",
-  "image_family": "change-this"
+  "image_family": "change-this",
+  "image_family_app": "change-this",
+  "image_family_db": "change-this",
+  "machine_type": "change-this"
 }
-
