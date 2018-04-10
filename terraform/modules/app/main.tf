@@ -61,6 +61,18 @@ resource "google_compute_firewall" "firewall_puma" {
   target_tags   = ["reddit-app"]
 }
 
+resource "google_compute_firewall" "firewall_nginx" {
+  name    = "default-allow-nginx"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = "${var.nginx_port}"
+  }
+
+  source_ranges = "${var.access_to_nginx_from}"
+}
+
 data "template_file" "puma_service_tpl" {
   template = "${file("${path.module}/files/puma.service.tpl")}"
 

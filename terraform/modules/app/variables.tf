@@ -37,3 +37,13 @@ variable need_deploy {
 variable mongo_ip {
   description = "Mongo DB IP"
 }
+
+variable nginx_port {
+  description = "Nginx port"
+  default     = ["80"]
+}
+
+variable access_to_nginx_from {
+  description = "Source ip access to nginx"
+  default     = ["0.0.0.0/0"]
+}
