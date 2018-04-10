@@ -8,3 +8,4 @@ variables.json
 .terraform/
 *.swp
 *.retry
+jdauphant.nginx
