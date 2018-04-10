@@ -9,3 +9,4 @@ variables.json
 *.swp
 *.retry
 jdauphant.nginx
+vault.key
