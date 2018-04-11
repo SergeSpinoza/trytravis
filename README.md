@@ -174,3 +174,23 @@ terraform apply
 ## Дополнительное задание со *
 - Dynamic Inventory реализован через чтение файла terraform.tfstate c помощью скриптов yatadis.py (источник https://github.com/wtsi-hgi/yatadis) и скрипта dynamic_inventory.sh (который создает необходимые группы).
 - Использование скрипта dynamic_inventory.sh добавлено в ansible.cfg
+
+
+# Homework-11
+
+## Основное задание
+- Перенесены ранее созданные плейбуки в отдельные роли;
+- Создано описание для двух окружений - stage и prod;
+- Добавлена комьюнити роль nginx (jdauphant.nginx);
+- Проверена работа приложения по 80 порту (через nginx); 
+- Добавлен плейбук по добавлению пользователей в систему и зашифрован с помощью vault. 
+
+###  Проверка
+Для проверки необходимо запустить команду для необходимого окружения (при ранее созданных инстансах с помощью terraform), например:
+`ansible-playbook -i environments/prod/inventory playbooks/site.yml`
+
+Выполнять команду необходимо из дериктории ansible. 
+
+
+## Дополнительное задание со *
+Добавлены скрипты динамического inventory для окружений prod и stage (файлы yatadis.py и dynamic_inventory.sh). Для запуска необходимо выполнить команду из директории ansible для необходимого окружения, например для stage: `ansible-playbook -i environments/stage/dynamic_inventory.sh playbooks/site.yml`
